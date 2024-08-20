@@ -1,14 +1,24 @@
-# Teeth-diseases-Classification
-This repo explains how to implement a CNN to classify 7 Teeth Diseases.
-A ResNet50 is built from scratch and fine tuned to calssify 7 dental diseaeses.
- first and like any NN model I started with data pre-processing to prepare the dental images for analysis through normalization, augmentation. This will ensure the images are in optimal condition for model training and evaluation.
-  Visualize the distribution of the classes to understand the balance of the dataset.
-  Display images before and after augmentation to evaluate the effectiveness of preprocessing techniques and ensure the transformations are enhancing the dataset appropriately
- I found that the data was not totally balanced so I assigned weights for each class.
- The next step is to biuld the model which I used 3 functions to implement it :
-     1- the identity functuion: preserves the spatial dimensions while mapping the input with output. 
-     2- the convolutional block : changes the spatial dimensions while also having a shortvut connection
-          which undergoes its own convolutional transformations to match the dimensions of its path.
-     3- the ResNet50 function which includes a number of transformations like identity blocks , convolutional blocks...etc and finaly fine tuning it with an output layer with 7 units and 'softmax' activiaion function. 
-   I also implemented some techiques like early stopping and rduce lr plateau to help me developing the model's performance
- trained the model with 250 eochs resulting about 99% validation accuracy and 99.5% evaluating accuracy 
+# Teeth Diseases Classification with ResNet50
+
+This repository explains how to implement a Convolutional Neural Network (CNN) to classify 7 types of teeth diseases. The approach involves building a ResNet50 model from scratch and fine-tuning it to classify these dental diseases.
+
+## Overview
+
+1. **Data Pre-Processing:**
+   - Normalization and augmentation are performed to prepare the dental images for analysis. This ensures the images are in optimal condition for model training and evaluation.
+   - Visualize the distribution of the classes to understand the balance of the dataset.
+   - Display images before and after augmentation to evaluate the effectiveness of preprocessing techniques and ensure the transformations are enhancing the dataset appropriately.
+
+2. **Class Imbalance:**
+   - The data was found to be not totally balanced. Therefore, weights were assigned to each class to address this imbalance.
+
+3. **Model Building:**
+   - **Identity Function:** Preserves the spatial dimensions while mapping the input to the output.
+   - **Convolutional Block:** Changes the spatial dimensions while having a shortcut connection that undergoes its own convolutional transformations to match the dimensions of its path.
+   - **ResNet50 Function:** Includes a number of transformations such as identity blocks, convolutional blocks, etc., and is fine-tuned with an output layer having 7 units and a 'softmax' activation function.
+
+4. **Training Techniques:**
+   - Implemented techniques like early stopping and ReduceLROnPlateau to improve the model's performance.
+   - Trained the model with 250 epochs, achieving great validation accuracy evaluation accuracy.
+
+
